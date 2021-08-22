@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-strided-special-floor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Round each element in a strided array toward negative infinity.",
   "license": "Apache-2.0",
   "author": {
@@ -15,12 +15,11 @@
   ],
   "main": "./lib",
   "browser": "./lib/main.js",
-  "gypfile": true,
+  "gypfile": false,
   "directories": {
     "benchmark": "./benchmark",
     "doc": "./docs",
     "example": "./examples",
-    "include": "./include",
     "lib": "./lib",
     "src": "./src",
     "test": "./test"
