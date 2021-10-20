@@ -2,7 +2,7 @@
 
 @license Apache-2.0
 
-Copyright (c) 2020 The Stdlib Authors.
+Copyright (c) 2021 The Stdlib Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ npm install @stdlib/math-strided-special-floor
 var floor = require( '@stdlib/math-strided-special-floor' );
 ```
 
-#### floor( N, x, strideX, y, strideY )
+#### floor( N, dtypeX, x, strideX, dtypeY, y, strideY )
 
 Rounds each element in a strided array `x` toward negative infinity and assigns the results to elements in a strided array `y`.
 
@@ -58,15 +58,17 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ -1.5, 2.3, -3.9, 4.2, -5.0 ] );
 
 // Perform operation in-place:
-floor( x.length, x, 1, x, 1 );
+floor( x.length, 'float64', x, 1, 'float64', x, 1 );
 // x => <Float64Array>[ -2.0, 2.0, -4.0, 4.0, -5.0 ]
 ```
 
 The function accepts the following arguments:
 
 -   **N**: number of indexed elements.
+-   **dtypeX**: [data type][@stdlib/strided/dtypes] for `x`.
 -   **x**: input array-like object.
 -   **strideX**: index increment for `x`.
+-   **dtypeY**: [data type][@stdlib/strided/dtypes] for `y`.
 -   **y**: output array-like object.
 -   **strideY**: index increment for `y`.
 
@@ -78,7 +80,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ -1.5, 2.3, -3.9, 4.2, -5.0, -6.0 ] );
 var y = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-floor( 3, x, 2, y, -1 );
+floor( 3, 'float64', x, 2, 'float64', y, -1 );
 // y => <Float64Array>[ -5.0, -4.0, -2.0, 0.0, 0.0, 0.0 ]
 ```
 
@@ -95,11 +97,11 @@ var y0 = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
 var y1 = new Float64Array( y0.buffer, y0.BYTES_PER_ELEMENT*3 ); // start at 4th element
 
-floor( 3, x1, -2, y1, 1 );
+floor( 3, 'float64', x1, -2, 'float64', y1, 1 );
 // y0 => <Float64Array>[ 0.0, 0.0, 0.0, -6.0, 4.0, 2.0 ]
 ```
 
-#### floor.ndarray( N, x, strideX, offsetX, y, strideY, offsetY )
+#### floor.ndarray( N, dtypeX, x, strideX, offsetX, dtypeY, y, strideY, offsetY )
 
 Rounds each element in a strided array `x` toward negative infinity and assigns the results to elements in a strided array `y` using alternative indexing semantics.
 
@@ -109,7 +111,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ -1.5, 2.3, -3.9, 4.2, -5.0 ] );
 var y = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-floor.ndarray( x.length, x, 1, 0, y, 1, 0 );
+floor.ndarray( x.length, 'float64', x, 1, 0, 'float64', y, 1, 0 );
 // y => <Float64Array>[ -2.0, 2.0, -4.0, 4.0, -5.0 ]
 ```
 
@@ -126,7 +128,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ -1.5, 2.3, -3.9, 4.2, -5.0, -6.0 ] );
 var y = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-floor.ndarray( 3, x, 2, 1, y, -1, y.length-1 );
+floor.ndarray( 3, 'float64', x, 2, 1, 'float64', y, -1, y.length-1 );
 // y => <Float64Array>[ 0.0, 0.0, 0.0, -6.0, 4.0, 2.0 ]
 ```
 
@@ -167,7 +169,7 @@ for ( i = 0; i < dt.length; i++ ) {
     y = filledarray( 0.0, x.length, 'generic' );
     console.log( y );
 
-    floor.ndarray( x.length, x, 1, 0, y, -1, y.length-1 );
+    floor.ndarray( x.length, dt[ i ], x, 1, 0, 'generic', y, -1, y.length-1 );
     console.log( y );
     console.log( '' );
 }
@@ -176,6 +178,16 @@ for ( i = 0; i < dt.length; i++ ) {
 </section>
 
 <!-- /.examples -->
+
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 
 <section class="main-repo" >
@@ -233,6 +245,8 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-strided-special-floor/main/LICENSE
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
+
+[@stdlib/strided/dtypes]: https://github.com/stdlib-js/strided-dtypes
 
 </section>
 
