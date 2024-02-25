@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@esm/index.mjs';
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@v0.2.1-esm/index.mjs';
 ```
 
 #### floor( N, dtypeX, x, strideX, dtypeY, y, strideY )
@@ -161,7 +161,7 @@ var uniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-unifor
 import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@esm/index.mjs';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
 import dtypes from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-typed-real-float-dtypes@esm/index.mjs';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@esm/index.mjs';
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@v0.2.1-esm/index.mjs';
 
 var dt;
 var x;
