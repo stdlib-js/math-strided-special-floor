@@ -48,6 +48,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-strided-special-floor/tags). For example,
+
+```javascript
 import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@v0.2.3-esm/index.mjs';
 ```
 
@@ -161,7 +166,7 @@ var uniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-unifor
 import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@esm/index.mjs';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
 import dtypes from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-typed-real-float-dtypes@esm/index.mjs';
-import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@v0.2.3-esm/index.mjs';
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-floor@esm/index.mjs';
 
 var dt;
 var x;
